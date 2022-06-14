@@ -1,4 +1,95 @@
-h1 {
-  font-size: 50px;
-  color: aquamarine;
+.header {
+  width: 100%;
+  height: 20%;
+  font-size: 2rem;
+  font-style: italic;
+  letter-spacing: 0.2em;
+  margin-left: 3rem;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+}
+
+.main .scoreBoard {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.scoreBoardHeader {
+  display: flex;
+  height: 2.5rem;
+  position: relative;
+  align-items: center;
+}
+
+.scoreHeading {
+  position: absolute;
+  font-size: 2.4rem;
+  left: 10px;
+}
+.scoreRefresh {
+  position: absolute;
+  height: 1.5rem;
+  right: 10px;
+  border-radius: 100vh;
+  border: 0.5px solid grey;
+}
+
+.scoreList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 2rem;
+  border: 1px solid grey;
+  border-radius: 0.4rem;
+}
+
+.eachScore:nth-child(odd) {
+  background-color: rgb(189, 185, 185);
+}
+
+.eachScore {
+  width: 100%;
+  height: 2.4rem;
+}
+
+.addScores {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+  position: relative;
+  border: 1px solid grey;
+}
+
+.addScores h2 {
+  font-size: 2rem;
+}
+
+.nameInput,
+.scoreInput {
+  height: 1.5rem;
+  width: 90%;
+  padding-left: 0.8rem;
+  margin-top: 1.5rem;
+  border-radius: 70vh;
+  border: 0.5px solid grey;
+}
+
+.submit {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3.5rem;
+  margin-top: 1.2rem;
+  border-radius: 70vh;
+  border: 0.5px solid grey;
 }
