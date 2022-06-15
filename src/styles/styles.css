@@ -30,6 +30,7 @@
   font-size: 2.4rem;
   left: 10px;
 }
+
 .scoreRefresh {
   position: absolute;
   height: 1.5rem;
@@ -51,13 +52,13 @@
   border-radius: 0.4rem;
 }
 
-.eachScore:nth-child(odd) {
-  background-color: rgb(189, 185, 185);
-}
-
 .eachScore {
   width: 100%;
   height: 2.4rem;
+}
+
+.eachScore:nth-child(odd) {
+  background-color: rgb(189, 185, 185);
 }
 
 .addScores {
@@ -85,9 +86,6 @@
 }
 
 .submit {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
   width: 3.5rem;
   margin-top: 1.2rem;
   border-radius: 70vh;
