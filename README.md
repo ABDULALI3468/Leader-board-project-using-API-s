@@ -17,7 +17,7 @@ Build a Leaderboard list app using:
 - Gitflow
 
 # Checkout how its running LIVE:
-![LIVE VERSION](https://abdulali3468.github.io/Leader-board-project-using-API-s/)
+[LIVE VERSION](https://abdulali3468.github.io/Leader-board-project-using-API-s/)
 
 ## Built With
 
