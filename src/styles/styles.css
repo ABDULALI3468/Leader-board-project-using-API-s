@@ -1,8 +1,14 @@
+body {
+  background-image: url(./background.jpg);
+  overflow-x: hidden;
+}
+
 .header {
   width: 100%;
   height: 20%;
   font-size: 2rem;
   font-style: italic;
+  color: aqua;
   letter-spacing: 0.2em;
   margin-left: 3rem;
 }
@@ -14,6 +20,7 @@
 
 .main .scoreBoard {
   width: 60%;
+  text-align: center;
   display: flex;
   flex-direction: column;
 }
@@ -28,18 +35,25 @@
 .scoreHeading {
   position: absolute;
   font-size: 2.4rem;
+  color: aqua;
   left: 10px;
 }
 
 .scoreRefresh {
   position: absolute;
-  height: 1.5rem;
+  height: auto;
   right: 10px;
+  background-color: aqua;
+  color: yellow;
   border-radius: 100vh;
-  border: 0.5px solid grey;
+  font-size: 1.5rem;
+  border: 0;
+  box-shadow: 5px 5px 20px aqua, -5px -5px 20px aqua;
 }
 
 .scoreList {
+  transition: all 800ms ease;
+  border-radius: 30px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -48,13 +62,18 @@
   margin: 0;
   padding: 0;
   margin-top: 2rem;
-  border: 1px solid grey;
-  border-radius: 0.4rem;
 }
 
 .eachScore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 2.4rem;
+  transition: all 800ms ease;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #acacac;
 }
 
 .eachScore:nth-child(odd) {
@@ -63,22 +82,23 @@
 
 .addScores {
   width: 40%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 10px;
   position: relative;
-  border: 1px solid grey;
 }
 
 .addScores h2 {
-  font-size: 2rem;
+  color: aqua;
+  font-size: 2.3rem;
 }
 
 .nameInput,
 .scoreInput {
-  height: 1.5rem;
-  width: 90%;
+  height: 2.5rem;
+  width: 70%;
   padding-left: 0.8rem;
   margin-top: 1.5rem;
   border-radius: 70vh;
@@ -86,8 +106,50 @@
 }
 
 .submit {
-  width: 3.5rem;
+  width: auto;
+  height: 2rem;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  color: yellow;
+  background-color: aqua;
   margin-top: 1.2rem;
-  border-radius: 70vh;
-  border: 0.5px solid grey;
+  border-radius: 100vh;
+  border: 0;
+  box-shadow: 5px 5px 20px aqua, -5px -5px 20px aqua;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main .scoreBoard {
+    display: flex;
+    text-align: center;
+    width: 100%;
+  }
+
+  .addScores {
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+
+  .submit {
+    margin-bottom: 3rem;
+  }
+
+  .scoreHeading {
+    font-size: 2rem;
+  }
 }
