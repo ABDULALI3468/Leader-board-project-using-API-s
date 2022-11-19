@@ -1,38 +1,35 @@
 import './styles/styles.css';
+import party from 'party-js';
+import getData from './modules/getData';
+import test from './modules/test';
 import Score from './modules/score.js';
 
-let scoreArr = [];
-if (JSON.parse(localStorage.getItem('scores'))) {
-  scoreArr = JSON.parse(localStorage.getItem('scores'));
-} else {
-  scoreArr = localStorage.setItem('scores', JSON.stringify([]));
-}
-
 const scoreList = document.querySelector('.scoreList');
+const submit = document.querySelector('.submit');
+const refreshBtn = document.querySelector('.scoreRefresh');
 const nameInput = document.querySelector('.nameInput');
 const scoreInput = document.querySelector('.scoreInput');
-const submit = document.querySelector('.submit');
 
-const render = () => {
-  scoreList.innerHTML = null;
-  const local = JSON.parse(localStorage.getItem('scores'));
-  local.forEach((elem) => {
-    const scoreCard = document.createElement('li');
-    scoreCard.classList.add('eachScore');
-    scoreCard.innerHTML = `${elem.name}: ${elem.score}`;
-    scoreList.appendChild(scoreCard);
+refreshBtn.addEventListener('click', async (e) => {
+  party.confetti(document.body, {
+    count: party.variation.range(100, 200),
   });
-};
-
-submit.addEventListener('click', () => {
-  const eachScore = new Score(nameInput.value, scoreInput.value);
-  nameInput.value = '';
-  scoreInput.value = '';
-  scoreArr = JSON.parse(localStorage.getItem('scores'));
-  scoreArr.push(eachScore);
-  localStorage.setItem('scores', JSON.stringify(scoreArr));
-  render();
+  e.preventDefault();
+  scoreList.innerHTML = '';
+  getData();
 });
 
-window.addEventListener('load', render());
-// window.addEventListener("load", c(scoreArr));
+submit.addEventListener('click', (e) => {
+  party.confetti(document.body, {
+    count: party.variation.range(100, 200),
+  });
+  const list = new Score(nameInput.value, scoreInput.value);
+  e.preventDefault();
+  test(list);
+  scoreList.innerHTML = '';
+  document.querySelector('.nameInput').value = '';
+  document.querySelector('.scoreInput').value = '';
+  setTimeout(getData, 500);
+});
+
+window.addEventListener('DOMContentLoaded', getData);
