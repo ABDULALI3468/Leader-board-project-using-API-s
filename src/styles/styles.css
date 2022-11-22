@@ -102,11 +102,9 @@ body {
 
 .addScores {
   width: 40%;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 10px;
   position: relative;
   height: 50%;
   margin-left: 0;
